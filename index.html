@@ -1,252 +1,249 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Valentine?</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Valentine?</title>
 
-  <style>
-    :root{
-      --bg-pink: #ffd1dc;      /* 연핑크 배경 */
-      --heart-pink: #ff2e88;   /* 진한 핑크 하트 */
-      --btn-ivory: #fff6e6;    /* 아이보리 버튼 */
-      --text: #111;           /* 검정 글자 */
-    }
+<style>
+:root{
+--bg-pink: #ffd1dc;      /* 연핑크 배경 */
+--heart-pink: #ff2e88;   /* 진한 핑크 하트 */
+--btn-ivory: #fff6e6;    /* 아이보리 버튼 */
+--text: #111;           /* 검정 글자 */
+}
 
-    /* 하트 패턴 wallpaper (SVG data URI) */
-    body{
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background-color: var(--bg-pink);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23ffd1dc'/%3E%3Cg fill='%23ff2e88' opacity='0.9'%3E%3Cpath d='M52 42c-7.5 0-13.5 6-13.5 13.5C38.5 70 52 80 52 80s13.5-10 13.5-24.5C65.5 48 59.5 42 52 42zm56 0c-7.5 0-13.5 6-13.5 13.5C94.5 70 108 80 108 80s13.5-10 13.5-24.5C121.5 48 115.5 42 108 42z'/%3E%3Cpath d='M80 62c-9.2-15.5-25.5-10.7-25.5 0C54.5 82 80 98 80 98s25.5-16 25.5-36c0-10.7-16.3-15.5-25.5 0z'/%3E%3C/g%3E%3Cg fill='%23ff2e88' opacity='0.65'%3E%3Cpath d='M30 110c-7 0-12.5 5.5-12.5 12.5C17.5 136 30 145 30 145s12.5-9 12.5-22.5C42.5 115.5 37 110 30 110z'/%3E%3Cpath d='M130 110c-7 0-12.5 5.5-12.5 12.5C117.5 136 130 145 130 145s12.5-9 12.5-22.5c0-7-5.5-12.5-12.5-12.5z'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 220px 220px;
-      background-repeat: repeat;
-    }
+/* 하트 패턴 wallpaper (SVG data URI) */
+body{
+margin: 0;
+min-height: 100vh;
+display: grid;
+place-items: center;
+color: var(--text);
+font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+background-color: var(--bg-pink);
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23ffd1dc'/%3E%3Cg fill='%23ff2e88' opacity='0.9'%3E%3Cpath d='M52 42c-7.5 0-13.5 6-13.5 13.5C38.5 70 52 80 52 80s13.5-10 13.5-24.5C65.5 48 59.5 42 52 42zm56 0c-7.5 0-13.5 6-13.5 13.5C94.5 70 108 80 108 80s13.5-10 13.5-24.5C121.5 48 115.5 42 108 42z'/%3E%3Cpath d='M80 62c-9.2-15.5-25.5-10.7-25.5 0C54.5 82 80 98 80 98s25.5-16 25.5-36c0-10.7-16.3-15.5-25.5 0z'/%3E%3C/g%3E%3Cg fill='%23ff2e88' opacity='0.65'%3E%3Cpath d='M30 110c-7 0-12.5 5.5-12.5 12.5C17.5 136 30 145 30 145s12.5-9 12.5-22.5C42.5 115.5 37 110 30 110z'/%3E%3Cpath d='M130 110c-7 0-12.5 5.5-12.5 12.5C117.5 136 130 145 130 145s12.5-9 12.5-22.5c0-7-5.5-12.5-12.5-12.5z'/%3E%3C/g%3E%3C/svg%3E");
+background-size: 220px 220px;
+background-repeat: repeat;
+}
 
-    .card{
-      width: min(920px, 92vw);
-      padding: 36px 22px 28px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
-      position: relative;
-      overflow: hidden;
-    }
+.card{
+width: min(920px, 92vw);
+padding: 36px 22px 28px;
+border-radius: 22px;
+background: rgba(255, 255, 255, 0.55);
+backdrop-filter: blur(6px);
+box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+position: relative;
+overflow: hidden;
+}
 
-    h1{
-      margin: 0 0 18px;
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      text-align: center;
-    }
+h1{
+margin: 0 0 18px;
+font-size: clamp(34px, 5vw, 64px);
+line-height: 1.05;
+letter-spacing: -0.02em;
+text-align: center;
+}
 
-    p.sub{
-      margin: 0 0 26px;
-      text-align: center;
-      font-size: clamp(14px, 1.8vw, 18px);
-      opacity: 0.85;
-    }
+p.sub{
+margin: 0 0 26px;
+text-align: center;
+font-size: clamp(14px, 1.8vw, 18px);
+opacity: 0.85;
+}
 
-    .stage{
-      position: relative;
+.stage{
+position: relative;
       .yes, .no { z-index: 5;
       .pop { pointer-events: none;
       /* 버튼이 다른 요소에 가려지지 않게 */
 
-      height: 260px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
-      overflow: hidden;
-    }
+height: 260px;
+border-radius: 18px;
+background: rgba(255, 255, 255, 0.35);
+box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+overflow: hidden;
+}
 
-    .btn{
-      appearance: none;
-      border: 0;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-      background: var(--btn-ivory);
-      color: var(--text);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
-      transition: transform 0.1s ease;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+.btn{
+appearance: none;
+border: 0;
+padding: 14px 22px;
+border-radius: 14px;
+font-size: 18px;
+font-weight: 700;
+cursor: pointer;
+background: var(--btn-ivory);
+color: var(--text);
+box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+transition: transform 0.1s ease;
+user-select: none;
+-webkit-tap-highlight-color: transparent;
+}
 
-    .btn:active{ transform: scale(0.98); }
+.btn:active{ transform: scale(0.98); }
 
+.yes{
+position: absolute;
+left: 50%;
+top: 58%;
+transform: translate(-140px, -50%);
+}
 
-     .yes{
-      position: absolute;
-      left: 50%;
-      top: 58%;
-      transform: translate(-140px, -50%);
-    }
+.no{
+position: absolute;
+left: 50%;
+top: 58%;
+transform: translate(40px, -50%);
+}
 
-    .no{
-      position: absolute;
-      left: 50%;
-      top: 58%;
-      transform: translate(40px, -50%);
-    }
+.toast{
+margin-top: 14px;
+text-align: center;
+font-weight: 700;
+min-height: 24px;
+}
 
+.pop{
+position: absolute;
+left: 50%;
+top: 10%;
+transform: translateX(-50%);
+font-size: 22px;
+font-weight: 800;
+opacity: 0;
+transition: opacity 0.25s ease;
+pointer-events: none;
+}
+.pop.show{ opacity: 1; }
 
+@media (max-width: 520px){
+.stage{ height: 300px; }
+.yes{ transform: translate(-130px, -50%); }
+.no{ transform: translate(30px, -50%); }
+}
 
-    .toast{
-      margin-top: 14px;
-      text-align: center;
-      font-weight: 700;
-      min-height: 24px;
-    }
-
-    .pop{
-      position: absolute;
-      left: 50%;
-      top: 10%;
-      transform: translateX(-50%);
-      font-size: 22px;
-      font-weight: 800;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-    .pop.show{ opacity: 1; }
-
-    @media (max-width: 520px){
-      .stage{ height: 300px; }
-      .yes{ transform: translate(-130px, -50%); }
-      .no{ transform: translate(30px, -50%); }
-    }
-
-    /* ✅ 여기부터: YES 눌렀을 때 사진 뜨는 모달 스타일 */
-    #modal{
-      position: fixed;
-      inset: 0;
-      display: none;            /* 기본 숨김 */
-      place-items: center;
-      background: rgba(0,0,0,0.45);
-      z-index: 9999;
-      padding: 18px;
-    }
-    #modalCard{
-      width: min(720px, 92vw);
-      border-radius: 22px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-    }
-    #modalImg{
-      width: 100%;
-      display: block;
-    }
-    #modalFooter{
-      padding: 14px 16px;
-      text-align: center;
-      font-weight: 800;
-    }
-  </style>
+/* ✅ 여기부터: YES 눌렀을 때 사진 뜨는 모달 스타일 */
+#modal{
+position: fixed;
+inset: 0;
+display: none;            /* 기본 숨김 */
+place-items: center;
+background: rgba(0,0,0,0.45);
+z-index: 9999;
+padding: 18px;
+}
+#modalCard{
+width: min(720px, 92vw);
+border-radius: 22px;
+overflow: hidden;
+background: rgba(255,255,255,0.95);
+box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+#modalImg{
+width: 100%;
+display: block;
+}
+#modalFooter{
+padding: 14px 16px;
+text-align: center;
+font-weight: 800;
+}
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Would you be my Valentine?</h1>
-    <p class="sub">Be honest… if you can 😇</p>
+<div class="card">
+<h1>Would you be my Valentine?</h1>
+<p class="sub">Be honest… if you can 😇</p>
 
-    <div class="stage" id="stage" aria-label="Valentine stage">
-      <div class="pop" id="pop">💖 YAY!! 💖</div>
+<div class="stage" id="stage" aria-label="Valentine stage">
+<div class="pop" id="pop">💖 YAY!! 💖</div>
 
-      <button class="btn yes" id="yesBtn">YES</button>
-      <button class="btn no" id="noBtn">NO</button>
-    </div>
+<button class="btn yes" id="yesBtn">YES</button>
+<button class="btn no" id="noBtn">NO</button>
+</div>
 
-    <div class="toast" id="toast"></div>
-  </div>
+<div class="toast" id="toast"></div>
+</div>
 
-  <!-- ✅ YES 클릭 시 뜨는 사진 모달 -->
-  <div id="modal" aria-hidden="true">
-    <div id="modalCard">
-      <img id="modalImg" alt="valentine" />
-      <div id="modalFooter">
-        💖 Our date is confirmed 💖
-        <div style="margin-top:12px;">
-          <button class="btn" id="closeModal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- ✅ YES 클릭 시 뜨는 사진 모달 -->
+<div id="modal" aria-hidden="true">
+<div id="modalCard">
+<img id="modalImg" alt="valentine" />
+<div id="modalFooter">
+💖 Our date is confirmed 💖
+<div style="margin-top:12px;">
+<button class="btn" id="closeModal">Close</button>
+</div>
+</div>
+</div>
+</div>
 
-  <script>
-    const stage = document.getElementById("stage");
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const toast = document.getElementById("toast");
-    const pop = document.getElementById("pop");
+<script>
+const stage = document.getElementById("stage");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const toast = document.getElementById("toast");
+const pop = document.getElementById("pop");
 
-    // ✅ 모달 요소
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modalImg");
-    const closeModal = document.getElementById("closeModal");
+// ✅ 모달 요소
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const closeModal = document.getElementById("closeModal");
 
-    const messages = [
-      "진짜?? 다시 생각해봐…",
-      "에이 설마… 😭",
-      "NO 버튼 너무 멀리 갔는데?",
-      "한 번만 YES 해주라…",
-      "마지막 기회!"
-    ];
-    let msgIdx = 0;
+const messages = [
+"진짜?? 다시 생각해봐…",
+"에이 설마… 😭",
+"NO 버튼 너무 멀리 갔는데?",
+"한 번만 YES 해주라…",
+"마지막 기회!"
+];
+let msgIdx = 0;
 
-    function moveNoButton() {
-      const rStage = stage.getBoundingClientRect();
-      const rBtn = noBtn.getBoundingClientRect();
+function moveNoButton() {
+const rStage = stage.getBoundingClientRect();
+const rBtn = noBtn.getBoundingClientRect();
 
-      const maxX = rStage.width - rBtn.width;
-      const maxY = rStage.height - rBtn.height;
+const maxX = rStage.width - rBtn.width;
+const maxY = rStage.height - rBtn.height;
 
-      const pad = 12;
-      const x = Math.random() * (maxX - pad*2) + pad;
-      const y = Math.random() * (maxY - pad*2) + pad;
+const pad = 12;
+const x = Math.random() * (maxX - pad*2) + pad;
+const y = Math.random() * (maxY - pad*2) + pad;
 
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top  = `${y}px`;
-      noBtn.style.transform = `translate(0,0)`;
+noBtn.style.left = `${x}px`;
+noBtn.style.top  = `${y}px`;
+noBtn.style.transform = `translate(0,0)`;
 
-      toast.textContent = messages[msgIdx % messages.length];
-      msgIdx++;
-    }
+toast.textContent = messages[msgIdx % messages.length];
+msgIdx++;
+}
 
-    let armed = false;
+let armed = false;
 
-    noBtn.addEventListener("mouseenter", () => {
-      armed = true;
-      moveNoButton();
-    });
+noBtn.addEventListener("mouseenter", () => {
+armed = true;
+moveNoButton();
+});
 
-    noBtn.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      armed = true;
-      moveNoButton();
-    }, { passive: false });
+noBtn.addEventListener("touchstart", (e) => {
+e.preventDefault();
+armed = true;
+moveNoButton();
+}, { passive: false });
 
-    noBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (!armed) armed = true;
-      moveNoButton();
-    });
+noBtn.addEventListener("click", (e) => {
+e.preventDefault();
+if (!armed) armed = true;
+moveNoButton();
+});
 
-    yesBtn.addEventListener("click", () => {
+yesBtn.addEventListener("click", () => {
   // ✅ YES 버튼은 그대로, 클릭하면 사진 모달 뜨기
-      pop.classList.add("show");
-      toast.textContent = "오케이… 이제 너 내 발렌타인임 💘";
+pop.classList.add("show");
+toast.textContent = "오케이… 이제 너 내 발렌타인임 💘";
 
   // ✅ 사진 모달
       modalImg.src = "assets/valentine.jpg";
@@ -270,50 +267,50 @@
 
     
 
-      // 하트 이펙트
-      const burst = document.createElement("div");
-      burst.textContent = "💗💗💗💗💗";
-      burst.style.position = "absolute";
-      burst.style.left = "50%";
-      burst.style.top = "78%";
-      burst.style.transform = "translate(-50%,-50%)";
-      burst.style.fontSize = "28px";
-      burst.style.animation = "floatUp 1.2s ease forwards";
-      stage.appendChild(burst);
-      setTimeout(() => burst.remove(), 1400);
+// 하트 이펙트
+const burst = document.createElement("div");
+burst.textContent = "💗💗💗💗💗";
+burst.style.position = "absolute";
+burst.style.left = "50%";
+burst.style.top = "78%";
+burst.style.transform = "translate(-50%,-50%)";
+burst.style.fontSize = "28px";
+burst.style.animation = "floatUp 1.2s ease forwards";
+stage.appendChild(burst);
+setTimeout(() => burst.remove(), 1400);
 
-      // ✅ 사진 모달 띄우기 (경로/파일명 맞춰야 함)
-      modalImg.src = "assets/valentine.jpg";
-      modal.style.display = "grid";
-      modal.setAttribute("aria-hidden", "false");
-    });
+// ✅ 사진 모달 띄우기 (경로/파일명 맞춰야 함)
+modalImg.src = "assets/valentine.jpg";
+modal.style.display = "grid";
+modal.setAttribute("aria-hidden", "false");
+});
 
-    closeModal.addEventListener("click", () => {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-    });
+closeModal.addEventListener("click", () => {
+modal.style.display = "none";
+modal.setAttribute("aria-hidden", "true");
+});
 
-    // 배경(검은 영역) 클릭하면 닫기
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-      }
-    });
+// 배경(검은 영역) 클릭하면 닫기
+modal.addEventListener("click", (e) => {
+if (e.target === modal) {
+modal.style.display = "none";
+modal.setAttribute("aria-hidden", "true");
+}
+});
 
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes floatUp {
-        0% { opacity: 0; transform: translate(-50%,-20%) scale(0.95); }
-        15%{ opacity: 1; }
-        100% { opacity: 0; transform: translate(-50%,-140%) scale(1.08); }
-      }
-    `;
-    document.head.appendChild(style);
+const style = document.createElement("style");
+style.textContent = `
+     @keyframes floatUp {
+       0% { opacity: 0; transform: translate(-50%,-20%) scale(0.95); }
+       15%{ opacity: 1; }
+       100% { opacity: 0; transform: translate(-50%,-140%) scale(1.08); }
+     }
+   `;
+document.head.appendChild(style);
 
-    window.addEventListener("resize", () => {
-      if (armed) moveNoButton();
-    });
-  </script>
+window.addEventListener("resize", () => {
+if (armed) moveNoButton();
+});
+</script>
 </body>
 </html>
